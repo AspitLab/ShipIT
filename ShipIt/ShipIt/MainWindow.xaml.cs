@@ -24,5 +24,41 @@ namespace ShipIt
 		{
 			InitializeComponent();
 		}
+
+		private void ButtonCreateModel_Click(object sender, RoutedEventArgs e)
+		{
+		}
+
+		private void TextBoxModelTonnage_TextChanged(object sender, TextChangedEventArgs e)
+		{
+		}
+
+		private void TextBoxModelMaxContainers_TextChanged(object sender, TextChangedEventArgs e)
+		{
+		}
+
+		private void TextBoxOrderWeight_TextChanged(object sender, TextChangedEventArgs e)
+		{
+		}
+
+		private void TextBoxOrderContainers_TextChanged(object sender, TextChangedEventArgs e)
+		{
+		}
+
+		private void ButtonCreateShip_Click(object sender, RoutedEventArgs e)
+		{
+		}
+
+		private void ButtonCreateHarbour_Click(object sender, RoutedEventArgs e)
+		{
+		}
+
+		private void ButtonCreateOrder_Click(object sender, RoutedEventArgs e)
+		{
+		}
+
+		private void ButtonCreateTransport_Click(object sender, RoutedEventArgs e)
+		{
+		}
 	}
 }
