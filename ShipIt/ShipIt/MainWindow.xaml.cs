@@ -51,7 +51,6 @@ namespace ShipIt
 
 		private void ButtonCreateTransport_Click(object sender, RoutedEventArgs e)
 		{
-			new Transport();
 		}
 	}
 }
