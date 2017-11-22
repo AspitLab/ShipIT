@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace ShipIt
 {
 	public class Model
 	{
-		private DataAccess dataAccess = new DataAccess("Data Source=10.205.44.39,49172;Initial Catalog=ShipIt;User id=Aspit;Password=Server2012;");
 		private string name;
 		private double depth;
 		private int tonnage;
@@ -33,7 +30,7 @@ namespace ShipIt
 			this.id = id;
 		}
 
-		public void InsertIntoDB()
+		public void InsertIntoDB(DataAccess dataAccess)
 		{
 			if (HasId)
 				throw new ItemExistsInDbException();

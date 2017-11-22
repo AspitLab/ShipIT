@@ -13,10 +13,7 @@ namespace ShipIt
 		/// Needs a connection string for the connection.
 		/// </summary>
 		/// <param name="conString">Connection string to the database</param>
-		public CommonDataAccess(string conString)
-		{
-			connectionString = conString;
-		}
+		public CommonDataAccess(string conString) => connectionString = conString;
 
 		/// <summary>
 		/// Method used to make a query to the database with an SQL statement,
