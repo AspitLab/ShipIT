@@ -23,6 +23,11 @@ namespace ShipIt
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			Model m = new Model("XM6", 30, 1000, 200);
+			MessageBox.Show(m.HasId.ToString());
+			m.InsertIntoDB();
+			MessageBox.Show(m.GetId().ToString());
 		}
 
 		private void ButtonCreateModel_Click(object sender, RoutedEventArgs e)
