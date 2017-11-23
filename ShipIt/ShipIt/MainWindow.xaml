@@ -33,6 +33,7 @@
 				<RowDefinition Height="1*" />
 				<RowDefinition Height="1*" />
 				<RowDefinition Height="1*" />
+				<RowDefinition Height="1*" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="1*" />
@@ -137,6 +138,19 @@
 					HorizontalContentAlignment="Center"
 					Content="New Model"
 					Click="ButtonCreateModel_Click" />
+			<Button x:Name="ButtonDeleteModel"
+					Margin="5"
+					Grid.Column="0"
+					Grid.Row="6"
+					Grid.ColumnSpan="2"
+					Grid.RowSpan="1"
+					VerticalAlignment="Stretch"
+					HorizontalAlignment="Stretch"
+					VerticalContentAlignment="Center"
+					HorizontalContentAlignment="Center"
+					Content="Delete Model"
+					IsEnabled="False"
+					Click="ButtonDeleteModel_Click" />
 		</Grid>
 
 		<Grid Grid.Row="0"
@@ -147,6 +161,7 @@
 				<RowDefinition Height="1*" />
 				<RowDefinition Height="1*" />
 				<RowDefinition Height="3*" />
+				<RowDefinition Height="1*" />
 				<RowDefinition Height="1*" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
@@ -199,7 +214,7 @@
 			<Button x:Name="ButtonCreateShip"
 					Margin="5"
 					Grid.Column="0"
-					Grid.Row="5"
+					Grid.Row="3"
 					Grid.ColumnSpan="2"
 					Grid.RowSpan="1"
 					VerticalAlignment="Stretch"
@@ -208,6 +223,19 @@
 					HorizontalContentAlignment="Center"
 					Content="New Ship"
 					Click="ButtonCreateShip_Click" />
+			<Button x:Name="ButtonDeleteShip"
+					Margin="5"
+					Grid.Column="0"
+					Grid.Row="4"
+					Grid.ColumnSpan="2"
+					Grid.RowSpan="1"
+					VerticalAlignment="Stretch"
+					HorizontalAlignment="Stretch"
+					VerticalContentAlignment="Center"
+					HorizontalContentAlignment="Center"
+					Content="Delete Ship"
+					IsEnabled="False"
+					Click="ButtonDeleteShip_Click" />
 		</Grid>
 
 		<Grid Grid.Row="0"
@@ -219,6 +247,7 @@
 				<RowDefinition Height="1*" />
 				<RowDefinition Height="1*" />
 				<RowDefinition Height="2*" />
+				<RowDefinition Height="1*" />
 				<RowDefinition Height="1*" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
@@ -292,7 +321,7 @@
 			<Button x:Name="ButtonCreateHarbour"
 					Margin="5"
 					Grid.Column="0"
-					Grid.Row="5"
+					Grid.Row="4"
 					Grid.ColumnSpan="2"
 					Grid.RowSpan="1"
 					VerticalAlignment="Stretch"
@@ -301,6 +330,19 @@
 					HorizontalContentAlignment="Center"
 					Content="New Harbour"
 					Click="ButtonCreateHarbour_Click" />
+			<Button x:Name="ButtonDeleteHarbour"
+					Margin="5"
+					Grid.Column="0"
+					Grid.Row="5"
+					Grid.ColumnSpan="2"
+					Grid.RowSpan="1"
+					VerticalAlignment="Stretch"
+					HorizontalAlignment="Stretch"
+					VerticalContentAlignment="Center"
+					HorizontalContentAlignment="Center"
+					Content="Delete Harbour"
+					IsEnabled="False"
+					Click="ButtonDeleteShip_Click" />
 		</Grid>
 
 		<Grid Grid.Row="0"
@@ -308,6 +350,7 @@
 			  Grid.RowSpan="1"
 			  Grid.ColumnSpan="1">
 			<Grid.RowDefinitions>
+				<RowDefinition Height="1*" />
 				<RowDefinition Height="1*" />
 				<RowDefinition Height="1*" />
 				<RowDefinition Height="1*" />
@@ -439,6 +482,19 @@
 					HorizontalContentAlignment="Center"
 					Content="New Order"
 					Click="ButtonCreateOrder_Click" />
+			<Button x:Name="ButtonDeleteOrder"
+					Margin="5"
+					Grid.Column="0"
+					Grid.Row="6"
+					Grid.ColumnSpan="2"
+					Grid.RowSpan="1"
+					VerticalAlignment="Stretch"
+					HorizontalAlignment="Stretch"
+					VerticalContentAlignment="Center"
+					HorizontalContentAlignment="Center"
+					Content="Delete Order"
+					IsEnabled="False"
+					Click="ButtonDeleteOrder_Click" />
 		</Grid>
 
 		<Grid Grid.Row="0"
@@ -449,6 +505,7 @@
 				<RowDefinition Height="1*" />
 				<RowDefinition Height="1*" />
 				<RowDefinition Height="3*" />
+				<RowDefinition Height="1*" />
 				<RowDefinition Height="1*" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
@@ -501,7 +558,7 @@
 			<Button x:Name="ButtonCreateTransport"
 					Margin="5"
 					Grid.Column="0"
-					Grid.Row="5"
+					Grid.Row="3"
 					Grid.ColumnSpan="2"
 					Grid.RowSpan="1"
 					VerticalAlignment="Stretch"
@@ -510,6 +567,19 @@
 					HorizontalContentAlignment="Center"
 					Content="New Transport"
 					Click="ButtonCreateTransport_Click" />
+			<Button x:Name="ButtonDeleteTransport"
+					Margin="5"
+					Grid.Column="0"
+					Grid.Row="4"
+					Grid.ColumnSpan="2"
+					Grid.RowSpan="1"
+					VerticalAlignment="Stretch"
+					HorizontalAlignment="Stretch"
+					VerticalContentAlignment="Center"
+					HorizontalContentAlignment="Center"
+					Content="Delete Transport"
+					IsEnabled="False"
+					Click="ButtonDeleteTransport_Click" />
 		</Grid>
 
 		<DataGrid x:Name="DataGridOverView"

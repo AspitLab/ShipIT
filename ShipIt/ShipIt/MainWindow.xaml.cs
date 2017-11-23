@@ -17,10 +17,6 @@ namespace ShipIt
 			InitializeComponent();
 		}
 
-		private void ButtonCreateModel_Click(object sender, RoutedEventArgs e)
-		{
-		}
-
 		private void TextBoxModelTonnage_TextChanged(object sender, TextChangedEventArgs e)
 		{
 		}
@@ -37,6 +33,10 @@ namespace ShipIt
 		{
 		}
 
+		private void ButtonCreateModel_Click(object sender, RoutedEventArgs e)
+		{
+		}
+
 		private void ButtonCreateShip_Click(object sender, RoutedEventArgs e)
 		{
 		}
@@ -50,6 +50,22 @@ namespace ShipIt
 		}
 
 		private void ButtonCreateTransport_Click(object sender, RoutedEventArgs e)
+		{
+		}
+
+		private void ButtonDeleteShip_Click(object sender, RoutedEventArgs e)
+		{
+		}
+
+		private void ButtonDeleteModel_Click(object sender, RoutedEventArgs e)
+		{
+		}
+
+		private void ButtonDeleteOrder_Click(object sender, RoutedEventArgs e)
+		{
+		}
+
+		private void ButtonDeleteTransport_Click(object sender, RoutedEventArgs e)
 		{
 		}
 	}

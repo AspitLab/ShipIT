@@ -39,6 +39,15 @@ namespace ShipIt
 			id = ds.Tables[0].Rows[0].Field<int>("Id");
 		}
 
+		public void LoadFromDB(DataAccess dataAccess)
+		{
+			if (!HasId)
+				throw new DataException();
+
+			DataSet ds = dataAccess.ExecReturn($"CreateModel '{Name}', {Depth}, {Tonnage}, {MaxContainers}");
+			id = ds.Tables[0].Rows[0].Field<int>("Id");
+		}
+
 		public string Name => name;
 		public double Depth => depth;
 		public int Tonnage => tonnage;
