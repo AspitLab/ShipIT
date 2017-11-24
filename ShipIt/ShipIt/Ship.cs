@@ -15,6 +15,22 @@ namespace ShipIt
 			this.name = name;
 		}
 
+		public Ship(Model model, string name, int id)
+		{
+			this.model = model;
+			this.name = name;
+			this.id = id;
+		}
+
+		public void InsertIntoDB(DataAccess dataAccess)
+		{
+			if (HasId)
+				throw new ItemExistsInDbException();
+
+			id = dataAccess.InsertShip(this);
+		}
+
+		public bool HasId => (!(ReferenceEquals(null, id) || id == 0));
 		public Model Model => model;
 		public string Name => name;
 

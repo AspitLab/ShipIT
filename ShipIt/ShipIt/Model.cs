@@ -35,24 +35,16 @@ namespace ShipIt
 			if (HasId)
 				throw new ItemExistsInDbException();
 
-			DataSet ds = dataAccess.ExecReturn($"CreateModel '{Name}', {Depth}, {Tonnage}, {MaxContainers}");
-			id = ds.Tables[0].Rows[0].Field<int>("Id");
-		}
-
-		public void LoadFromDB(DataAccess dataAccess)
-		{
-			if (!HasId)
-				throw new DataException();
-
-			DataSet ds = dataAccess.ExecReturn($"CreateModel '{Name}', {Depth}, {Tonnage}, {MaxContainers}");
-			id = ds.Tables[0].Rows[0].Field<int>("Id");
+			id = dataAccess.InsertModel(this);
 		}
 
 		public string Name => name;
 		public double Depth => depth;
 		public int Tonnage => tonnage;
 		public int MaxContainers => maxContainers;
-		public bool HasId => ReferenceEquals(null, id);
+		public bool HasId => (!(ReferenceEquals(null, id) || id == 0));
+
+		public int GetId() => id;
 
 		public override string ToString() => Name;
 	}

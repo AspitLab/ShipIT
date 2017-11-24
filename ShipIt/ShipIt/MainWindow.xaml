@@ -11,10 +11,11 @@
 		WindowState="Maximized">
 	<Grid Margin="5">
 		<Grid.RowDefinitions>
-			<RowDefinition Height="1*" />
 			<RowDefinition Height="2*" />
+			<RowDefinition Height="3*" />
 		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*" />
 			<ColumnDefinition Width="1*" />
 			<ColumnDefinition Width="1*" />
 			<ColumnDefinition Width="1*" />
@@ -103,8 +104,7 @@
 						 VerticalAlignment="Stretch"
 						 HorizontalAlignment="Stretch"
 						 VerticalContentAlignment="Center"
-						 HorizontalContentAlignment="Left"
-						 TextChanged="TextBoxModelTonnage_TextChanged" />
+						 HorizontalContentAlignment="Left" />
 
 				<Label Margin="5"
 					   Grid.Column="0"
@@ -125,8 +125,7 @@
 						 VerticalAlignment="Stretch"
 						 HorizontalAlignment="Stretch"
 						 VerticalContentAlignment="Center"
-						 HorizontalContentAlignment="Left"
-						 TextChanged="TextBoxModelMaxContainers_TextChanged" />
+						 HorizontalContentAlignment="Left" />
 
 				<Button x:Name="ButtonCreateModel"
 						Margin="5"
@@ -213,7 +212,7 @@
 						  VerticalAlignment="Stretch"
 						  HorizontalAlignment="Stretch"
 						  VerticalContentAlignment="Center"
-						  HorizontalContentAlignment="Center" />
+						  HorizontalContentAlignment="Left" />
 
 				<Button x:Name="ButtonCreateShip"
 						Margin="5"
@@ -349,7 +348,7 @@
 						HorizontalContentAlignment="Center"
 						Content="Delete Harbour"
 						IsEnabled="False"
-						Click="ButtonDeleteShip_Click" />
+						Click="ButtonDeleteHarbour_Click" />
 			</Grid>
 		</GroupBox>
 
@@ -413,8 +412,7 @@
 						 VerticalAlignment="Stretch"
 						 HorizontalAlignment="Stretch"
 						 VerticalContentAlignment="Center"
-						 HorizontalContentAlignment="Left"
-						 TextChanged="TextBoxOrderWeight_TextChanged" />
+						 HorizontalContentAlignment="Left" />
 
 				<Label Margin="5"
 					   Grid.Column="0"
@@ -435,8 +433,7 @@
 						 VerticalAlignment="Stretch"
 						 HorizontalAlignment="Stretch"
 						 VerticalContentAlignment="Center"
-						 HorizontalContentAlignment="Left"
-						 TextChanged="TextBoxOrderContainers_TextChanged" />
+						 HorizontalContentAlignment="Left" />
 
 				<Label Margin="5"
 					   Grid.Column="0"
@@ -595,12 +592,87 @@
 						Click="ButtonDeleteTransport_Click" />
 			</Grid>
 		</GroupBox>
+		<GroupBox Grid.Row="0"
+				  Grid.Column="5"
+				  Grid.RowSpan="1"
+				  Grid.ColumnSpan="1"
+				  Header="Views">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*" />
+					<RowDefinition Height="1*" />
+					<RowDefinition Height="1*" />
+					<RowDefinition Height="1*" />
+					<RowDefinition Height="1*" />
+				</Grid.RowDefinitions>
+				<Button x:Name="ButtonOverViewModel"
+						Margin="5"
+						Grid.Column="0"
+						Grid.Row="0"
+						Grid.ColumnSpan="1"
+						Grid.RowSpan="1"
+						VerticalAlignment="Stretch"
+						HorizontalAlignment="Stretch"
+						VerticalContentAlignment="Center"
+						HorizontalContentAlignment="Center"
+						Content="View Models"
+						Click="ButtonOverViewModel_Click" />
+				<Button x:Name="ButtonOverViewShip"
+						Margin="5"
+						Grid.Column="0"
+						Grid.Row="1"
+						Grid.ColumnSpan="1"
+						Grid.RowSpan="1"
+						VerticalAlignment="Stretch"
+						HorizontalAlignment="Stretch"
+						VerticalContentAlignment="Center"
+						HorizontalContentAlignment="Center"
+						Content="View Ships"
+						Click="ButtonOverViewShip_Click" />
+				<Button x:Name="ButtonOverViewHarbour"
+						Margin="5"
+						Grid.Column="0"
+						Grid.Row="2"
+						Grid.ColumnSpan="1"
+						Grid.RowSpan="1"
+						VerticalAlignment="Stretch"
+						HorizontalAlignment="Stretch"
+						VerticalContentAlignment="Center"
+						HorizontalContentAlignment="Center"
+						Content="View Harbours"
+						Click="ButtonOverViewHarbour_Click" />
+				<Button x:Name="ButtonOverViewOrder"
+						Margin="5"
+						Grid.Column="0"
+						Grid.Row="3"
+						Grid.ColumnSpan="1"
+						Grid.RowSpan="1"
+						VerticalAlignment="Stretch"
+						HorizontalAlignment="Stretch"
+						VerticalContentAlignment="Center"
+						HorizontalContentAlignment="Center"
+						Content="View Orders"
+						Click="ButtonOverViewOrder_Click" />
+				<Button x:Name="ButtonOverViewTransport"
+						Margin="5"
+						Grid.Column="0"
+						Grid.Row="4"
+						Grid.ColumnSpan="1"
+						Grid.RowSpan="1"
+						VerticalAlignment="Stretch"
+						HorizontalAlignment="Stretch"
+						VerticalContentAlignment="Center"
+						HorizontalContentAlignment="Center"
+						Content="View Transports"
+						Click="ButtonOverViewTransport_Click" />
+			</Grid>
+		</GroupBox>
 
 		<DataGrid x:Name="DataGridOverView"
 				  Margin="5"
 				  Grid.Column="0"
 				  Grid.Row="1"
-				  Grid.ColumnSpan="5"
+				  Grid.ColumnSpan="6"
 				  Grid.RowSpan="1"
 				  VerticalAlignment="Stretch"
 				  HorizontalAlignment="Stretch"
