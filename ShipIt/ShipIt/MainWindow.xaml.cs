@@ -39,7 +39,7 @@ namespace ShipIt
 			{
 				Model model = new Model(TextBoxModelName.Text, depth, tonnage, maxContainers);
 				Models.Add(model);
-				model.InsertIntoDB(dataAccess);
+				model.Add(dataAccess);
 				LoadGridView(DisplayMode.Model);
 			}
 		}
@@ -50,7 +50,7 @@ namespace ShipIt
 			{
 				Ship ship = new Ship((Model)ComboBoxShipModel.SelectedItem, TextBoxShipName.Text);
 				Ships.Add(ship);
-				ship.InsertIntoDB(dataAccess);
+				ship.Add(dataAccess);
 				LoadGridView(DisplayMode.Ship);
 			}
 		}
@@ -102,17 +102,7 @@ namespace ShipIt
 					}
 				case DisplayMode.Model:
 					{
-						foreach (DataRow row in dataAccess.GetAllModels())
-						{
-							Models.Add(new Model
-								(
-								row.Field<string>("Name"),
-								row.Field<double>("Depth"),
-								row.Field<int>("Tonnage"),
-								row.Field<int>("MaxContainers"),
-								row.Field<int>("Id")
-								));
-						}
+						Models = dataAccess.GetAllModels();
 						DataGridOverView.ItemsSource = Models;
 						DataGridOverView.Items.Refresh();
 						break;
