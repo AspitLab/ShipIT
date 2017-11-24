@@ -29,8 +29,8 @@ namespace ShipIt
 
 			//Uses the connection and command
 			//The using makes sure to close and dispose the objects in the end
-			using (var con = new SqlConnection(connectionString))
-			using (var command = new SqlCommand(sql, con))
+			using (SqlConnection con = new SqlConnection(connectionString))
+			using (SqlCommand command = new SqlCommand(sql, con))
 			{
 				try
 				{
@@ -59,8 +59,8 @@ namespace ShipIt
 
 			//Uses the connection and command
 			//The using makes sure to close and dispose the objects in the end
-			using (var con = new SqlConnection(connectionString))
-			using (var command = new SqlCommand(sql, con))
+			using (SqlConnection con = new SqlConnection(connectionString))
+			using (SqlCommand command = new SqlCommand(sql, con))
 			{
 				try
 				{
