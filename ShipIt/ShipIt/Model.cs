@@ -30,7 +30,7 @@ namespace ShipIt
             this.maxContainers = maxContainers;
         }
 
-        public void Add(DataAccess dataAccess)
+        public void Create(DataAccess dataAccess)
         {
             if (HasId)
                 throw new ItemExistsInDbException();

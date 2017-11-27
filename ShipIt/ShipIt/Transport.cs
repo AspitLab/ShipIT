@@ -31,7 +31,7 @@ namespace ShipIt
         /// Author: jako6292 (23/11/2017).
         /// </summary>
         /// <param name="dataAccess">An instance of DataAccess.</param>
-        public void Add(DataAccess dataAccess)
+        public void Create(DataAccess dataAccess)
         {
             if(HasId)
                 throw new ItemExistsInDbException();
