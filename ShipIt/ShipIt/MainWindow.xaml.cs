@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace ShipIt
 {
@@ -9,36 +9,50 @@ namespace ShipIt
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		public DataAccess dataAccess = new DataAccess("Data Source=10.205.44.39,49172;Initial Catalog=ShipIt;User id=Aspit;Password=Server2012;");
+		private DataAccess dataAccess = new DataAccess("Data Source=10.205.44.39,49172;Initial Catalog=ShipIt;User id=Aspit;Password=Server2012;");
 		public List<Model> Models = new List<Model>();
+		public List<Ship> Ships = new List<Ship>();
+		public List<Harbour> Harbour = new List<Harbour>();
+		public List<Order> Orders = new List<Order>();
+		public List<Transport> Transports = new List<Transport>();
+
+		private enum DisplayMode { Model, Ship, Harbour, Order, Transport, None }
+
+		private DisplayMode currentBox = DisplayMode.None;
 
 		public MainWindow()
 		{
 			InitializeComponent();
-		}
-
-		private void TextBoxModelTonnage_TextChanged(object sender, TextChangedEventArgs e)
-		{
-		}
-
-		private void TextBoxModelMaxContainers_TextChanged(object sender, TextChangedEventArgs e)
-		{
-		}
-
-		private void TextBoxOrderWeight_TextChanged(object sender, TextChangedEventArgs e)
-		{
-		}
-
-		private void TextBoxOrderContainers_TextChanged(object sender, TextChangedEventArgs e)
-		{
+			LoadGridView(DisplayMode.Model);
+			UpdateComboBoxes();
 		}
 
 		private void ButtonCreateModel_Click(object sender, RoutedEventArgs e)
 		{
+			if (
+				   (double.TryParse(TextBoxModelDepth.Text, out double depth) || TextBoxModelDepth.Text.EndsWith("."))
+				   &&
+				   int.TryParse(TextBoxModelTonnage.Text, out int tonnage)
+				   &&
+				   int.TryParse(TextBoxModelMaxContainers.Text, out int maxContainers)
+				   )
+			{
+				Model model = new Model(TextBoxModelName.Text, depth, tonnage, maxContainers);
+				Models.Add(model);
+				model.Add(dataAccess);
+				LoadGridView(DisplayMode.Model);
+			}
 		}
 
 		private void ButtonCreateShip_Click(object sender, RoutedEventArgs e)
 		{
+			if (ComboBoxShipModel.SelectedItem != null)
+			{
+				Ship ship = new Ship((Model)ComboBoxShipModel.SelectedItem, TextBoxShipName.Text);
+				Ships.Add(ship);
+				ship.Add(dataAccess);
+				LoadGridView(DisplayMode.Ship);
+			}
 		}
 
 		private void ButtonCreateHarbour_Click(object sender, RoutedEventArgs e)
@@ -53,20 +67,79 @@ namespace ShipIt
 		{
 		}
 
-		private void ButtonDeleteShip_Click(object sender, RoutedEventArgs e)
-		{
-		}
-
 		private void ButtonDeleteModel_Click(object sender, RoutedEventArgs e)
 		{
+			currentBox = DisplayMode.None;
+		}
+
+		private void ButtonDeleteShip_Click(object sender, RoutedEventArgs e)
+		{
+			currentBox = DisplayMode.None;
+		}
+
+		private void ButtonDeleteHarbour_Click(object sender, RoutedEventArgs e)
+		{
+			currentBox = DisplayMode.None;
 		}
 
 		private void ButtonDeleteOrder_Click(object sender, RoutedEventArgs e)
 		{
+			currentBox = DisplayMode.None;
 		}
 
 		private void ButtonDeleteTransport_Click(object sender, RoutedEventArgs e)
 		{
+			currentBox = DisplayMode.None;
+		}
+
+		private void LoadGridView(DisplayMode mode)
+		{
+			switch (mode)
+			{
+				case DisplayMode.None:
+					{
+						break;
+					}
+				case DisplayMode.Model:
+					{
+						Models = dataAccess.GetAllModels();
+						DataGridOverView.ItemsSource = Models;
+						DataGridOverView.Items.Refresh();
+						break;
+					}
+				case DisplayMode.Ship:
+					{
+						break;
+					}
+				case DisplayMode.Harbour:
+					{
+						break;
+					}
+				case DisplayMode.Order:
+					{
+						break;
+					}
+				case DisplayMode.Transport:
+					{
+						break;
+					}
+			}
+		}
+
+		private void ButtonOverViewModel_Click(object sender, RoutedEventArgs e) => LoadGridView(DisplayMode.Model);
+
+		private void ButtonOverViewShip_Click(object sender, RoutedEventArgs e) => LoadGridView(DisplayMode.Ship);
+
+		private void ButtonOverViewHarbour_Click(object sender, RoutedEventArgs e) => LoadGridView(DisplayMode.Harbour);
+
+		private void ButtonOverViewOrder_Click(object sender, RoutedEventArgs e) => LoadGridView(DisplayMode.Order);
+
+		private void ButtonOverViewTransport_Click(object sender, RoutedEventArgs e) => LoadGridView(DisplayMode.Transport);
+
+		private void UpdateComboBoxes()
+		{
+			ComboBoxShipModel.ItemsSource = Models;
+			ComboBoxShipModel.Items.Refresh();
 		}
 	}
 }
