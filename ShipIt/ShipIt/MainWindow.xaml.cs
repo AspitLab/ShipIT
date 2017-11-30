@@ -50,7 +50,7 @@ namespace ShipIt
 			{
 				Ship ship = new Ship((Model)ComboBoxShipModel.SelectedItem, TextBoxShipName.Text);
 				Ships.Add(ship);
-				ship.Add(dataAccess);
+				ship.Create(dataAccess);
 				LoadGridView(DisplayMode.Ship);
 			}
 		}
